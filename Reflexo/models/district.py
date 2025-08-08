@@ -3,11 +3,15 @@ from .province import Province  # <-- este import es clave
 
 
 class District(models.Model):
+    name = models.CharField(max_length=255)
     province = models.ForeignKey(
         Province,
         on_delete=models.CASCADE,
         related_name="districts"  # este es el nombre para acceder desde Province
     )
+
+    def __str__(self):
+        return self.name
 
 
 class DistrictUser(models.Model):

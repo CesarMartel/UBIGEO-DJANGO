@@ -21,6 +21,6 @@ from Reflexo import views  # 👈 importar tus vistas
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("countries/", views.list_countries, name="list_countries"),
-    path("provinces/", views.list_provinces, name="list_provinces"),
-    path("regions/", views.list_regions, name="list_regions"),
+    path("provinces/", views.ProvinceListView.as_view(), name="list_provinces"),
+    path("regions/", views.RegionView.as_view(), name="list_regions"),
 ]

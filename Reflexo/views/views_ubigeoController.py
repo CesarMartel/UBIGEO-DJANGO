@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Country, Region, Province, District
+from Reflexo.models import Country, Region, Province, District
 
 @api_view(['GET'])
 def regions(request):
