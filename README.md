@@ -32,26 +32,9 @@ El equipo encargado de la migración del módulo de Ubigeo está compuesto por l
 |      Developer      | Fernando Dionicio |
 |      Developer      | Miguel Ruiz       |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-5. Estructura del Repositorio
-/reflexo-peru-v2-ubigeo
-├── .github/
-├── ubigeo/
-│   ├── migrations/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── models.py
-│   ├── serializers.py
-│   ├── views.py
-│   └── urls.py
-├── reflexo_peru_v2_ubigeo/
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── manage.py
-└── README.md
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-7. Instalación y Configuración
+6. Instalación y Configuración
 Para ejecutar el proyecto localmente, sigue los siguientes pasos:
 
 Clona el repositorio:
@@ -73,7 +56,7 @@ Aplica las migraciones:
 python manage.py makemigrations ubigeo
 python manage.py migrate
 
-8. Uso
+7. Uso
 Para levantar el servidor de desarrollo, ejecuta:
 
 python manage.py runserver
