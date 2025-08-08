@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Distritos - Sistema de Ubigeo{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="fas fa-building text-info me-2"></i>
+                Distritos
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="data-table">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Provincia</th>
+                                    <th>Región</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for district in districts %}
+                                <tr>
+                                    <td>{{ district.id }}</td>
+                                    <td><strong>{{ district.name }}</strong></td>
+                                    <td>
+                                        <span class="badge bg-warning">{{ district.province.name }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-info">{{ district.province.region.name }}</span>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="4" class="text-center text-muted">
+                                        No hay distritos registrados
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

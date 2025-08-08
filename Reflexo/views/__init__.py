@@ -11,3 +11,16 @@ from .views_region import RegionView
 
 # Endpoints de ubigeo (si quieres unificarlos también)
 from .views_ubigeoController import regions, provinces, districts, countries
+
+# Vistas web
+from .views_web import (
+    home_view,
+    countries_view,
+    regions_view,
+    provinces_view,
+    districts_view,
+    api_countries,
+    api_regions,
+    api_provinces,
+    api_districts
+)
