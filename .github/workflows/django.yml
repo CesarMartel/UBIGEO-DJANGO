@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [provincia]
+    branches: ["**"]  # Cualquier rama
   pull_request:
-    branches: [provincia]
+    branches: ["**"]
 
 jobs:
   build:
