@@ -3,9 +3,9 @@ name: Django CI
 
 on:
   push:
-    branches: [main, develop, ESTRUCTURA-DJANGO, proyect-web, Distritos]
+    branches: [main, develop, ESTRUCTURA-DJANGO, proyect-web, Distritos, DJANGO-UNIFICACION ]
   pull_request:
-    branches: [main, develop, Proyect-web]
+    branches: [main, develop, Proyect-web, DJANGO-UNIFICACION]
 
 jobs:
   build:
