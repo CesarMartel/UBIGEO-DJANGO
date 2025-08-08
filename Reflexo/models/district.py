@@ -3,7 +3,7 @@ from .province import Province  # <-- este import es clave
 
 
 class District(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, default="Sin nombre")
     province = models.ForeignKey(
         Province,
         on_delete=models.CASCADE,
