@@ -1,5 +1,5 @@
 """
-URL configuration for Migraciones project.
+URL configuration for Config project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,9 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from Reflexo import views  # 👈 importar tus vistas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('Reflexo.urls')),  # ← Esto es lo importante
+    path("countries/", views.list_countries, name="list_countries"),
+    path("provinces/", views.list_provinces, name="list_provinces"),
+    path("regions/", views.list_regions, name="list_regions"),
 ]
