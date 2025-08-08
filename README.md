@@ -34,22 +34,22 @@ El equipo encargado de la migración del módulo de Ubigeo está compuesto por l
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 5. Estructura del Repositorio
 /reflexo-peru-v2-ubigeo
-├── .github/          # Archivos de configuración para GitHub Actions
-├── ubigeo/           # Aplicación principal del módulo
-│   ├── migrations/   # Migraciones de la base de datos
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── models.py     # Modelos de País, Región, Provincia, Distrito
-│   ├── serializers.py# Serializadores de la API
-│   ├── views.py      # Lógica de la API (CRUD, búsqueda, etc.)
-│   └── urls.py       # Rutas de la API
-├── reflexo_peru_v2_ubigeo/ # Archivos de configuración del proyecto
-│   ├── asgi.py
-│   ├── settings.py   # Configuración de Django
-│   ├── urls.py       # URLs principales del proyecto
-│   └── wsgi.py
-├── manage.py         # Utilidad de línea de comandos de Django
-└── README.md         # Archivo de documentación (este documento)
+├── .github/          # Archivos de configuración para GitHub Actions|
+├── ubigeo/           # Aplicación principal del módulo|
+│   ├── migrations/   # Migraciones de la base de datos|
+│   ├── __init__.py|
+│   ├── admin.py|
+│   ├── models.py     # Modelos de País, Región, Provincia, Distrito|
+│   ├── serializers.py# Serializadores de la API|
+│   ├── views.py      # Lógica de la API (CRUD, búsqueda, etc.)|
+│   └── urls.py       # Rutas de la API|
+├── reflexo_peru_v2_ubigeo/ # Archivos de configuración del proyecto|
+│   ├── asgi.py|
+│   ├── settings.py   # Configuración de Django|
+│   ├── urls.py       # URLs principales del proyecto|
+│   └── wsgi.py|
+├── manage.py         # Utilidad de línea de comandos de Django|
+└── README.md         # Archivo de documentación (este documento)|
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 7. Instalación y Configuración
 Para ejecutar el proyecto localmente, sigue los siguientes pasos:
