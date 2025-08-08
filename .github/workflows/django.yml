@@ -2,16 +2,16 @@ name: Django CI
 
 on:
   push:
-    branches: [main, develop, ESTRUCTURA-DJANGO, proyect-web, Distritos]
+    branches: [main, develop, ESTRUCTURA-DJANGO, proyect-web,fernan, rama-sebas]
   pull_request:
-    branches: [main, develop, Proyect-web, Distritos]
+    branches: [main, develop, proyect-web]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      DJANGO_SETTINGS_MODULE: Migraciones.settings  # Ajusta si tu settings está en otra ruta
+      DJANGO_SETTINGS_MODULE: conversion.settings
       PYTHONPATH: ${{ github.workspace }}
 
     steps:
@@ -28,6 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests with pytest
-        run: |
-          pytest -v -s
+      - name: Run migrations
+        run: python mi_proyecto/manage.py migrate
+      - name: Run tests
+        run: python mi_proyecto/manage.py test
