@@ -11,3 +11,6 @@ venv/
 .idea/
 .vscode/
 node_modules
+Reflexo 
+config
+.pytest_cache
