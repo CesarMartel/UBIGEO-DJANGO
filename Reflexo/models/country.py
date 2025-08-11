@@ -8,26 +8,14 @@ class Country(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        app_label = 'Reflexo'
-
 
 class CountryUser(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='users')
-
-    class Meta:
-        app_label = 'Reflexo'
 
 
 class CountryPatient(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='patients')
 
-    class Meta:
-        app_label = 'Reflexo'
-
 
 class CountryTherapist(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='therapists')
-
-    class Meta:
-        app_label = 'Reflexo'
