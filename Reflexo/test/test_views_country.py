@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from Reflexo.models import Country
+from Reflexo.models import Country# o Country, District, Region
 
 @pytest.mark.django_db
 def test_list_countries(client):

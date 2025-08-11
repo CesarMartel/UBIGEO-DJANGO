@@ -1,44 +1,38 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.views import View
 from Reflexo.models import Country, Region, Province, District
 
-class HomeView(View):
-    def get(self, request):
-        """Vista para la página principal"""
-        return render(request, 'home.html')
+def home_view(request):
+    """Vista para la página principal"""
+    return render(request, 'home.html')
 
-class CountriesWebView(View):
-    def get(self, request):
-        """Vista para mostrar países"""
-        countries = Country.objects.all()
-        return render(request, 'countries.html', {'countries': countries})
+def countries_view(request):
+    """Vista para mostrar países"""
+    countries = Country.objects.all()
+    return render(request, 'countries.html', {'countries': countries})
 
-class RegionsWebView(View):
-    def get(self, request):
-        """Vista para mostrar regiones"""
-        regions = Region.objects.filter(deleted_at__isnull=True)
-        return render(request, 'regions.html', {'regions': regions})
+def regions_view(request):
+    """Vista para mostrar regiones"""
+    regions = Region.objects.filter(deleted_at__isnull=True)
+    return render(request, 'regions.html', {'regions': regions})
 
-class ProvincesWebView(View):
-    def get(self, request):
-        """Vista para mostrar provincias"""
-        provinces = Province.objects.all()
-        regions = Region.objects.filter(deleted_at__isnull=True)
-        return render(request, 'provinces.html', {
-            'provinces': provinces,
-            'regions': regions
-        })
+def provinces_view(request):
+    """Vista para mostrar provincias"""
+    provinces = Province.objects.all()
+    regions = Region.objects.filter(deleted_at__isnull=True)
+    return render(request, 'provinces.html', {
+        'provinces': provinces,
+        'regions': regions
+    })
 
-class DistrictsWebView(View):
-    def get(self, request):
-        """Vista para mostrar distritos"""
-        districts = District.objects.all()
-        provinces = Province.objects.all()
-        return render(request, 'districts.html', {
-            'districts': districts,
-            'provinces': provinces
-        })
+def districts_view(request):
+    """Vista para mostrar distritos"""
+    districts = District.objects.all()
+    provinces = Province.objects.all()
+    return render(request, 'districts.html', {
+        'districts': districts,
+        'provinces': provinces
+    })
 
 # API endpoints para AJAX
 def api_countries(request):

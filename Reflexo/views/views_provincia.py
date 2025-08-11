@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from Reflexo.models import Province
 from django.views import View
 
-class ProvinceView(View):
+class ProvinceListView(View):
     def get(self, request):
         provinces = Province.objects.all()
         data = [{"id": province.id, "name": province.name} for province in provinces]
