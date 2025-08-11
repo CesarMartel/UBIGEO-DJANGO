@@ -8,10 +8,10 @@ class Command(BaseCommand):
     help = 'Carga datos desde archivos CSV'
 
     def handle(self, *args, **options):
-        self.stdout.write('Cargando datos desde archivos CSV...')
+        self.stdout.write('Cargando datos desde archivos CSV......')
         
         # Limpiar datos existentes
-        self.stdout.write('Limpiando datos existentes...')
+        self.stdout.write('Limpiando datos existentes.....')
         District.objects.all().delete()
         Province.objects.all().delete()
         Region.objects.all().delete()
