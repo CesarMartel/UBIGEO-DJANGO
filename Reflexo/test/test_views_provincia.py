@@ -7,7 +7,7 @@ def test_list_provinces(client):
     region = Region.objects.create(name="Costa")
     Province.objects.create(name="Lima", region=region)
 
-    url = reverse("api_provinces")
+    url = reverse("list_provinces")
     response = client.get(url)
     assert response.status_code == 200
 

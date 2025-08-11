@@ -1,19 +1,24 @@
 from django.contrib import admin
-from django.urls import path, include
-from Reflexo.views.views_web import home_view, countries_view, regions_view, provinces_view, districts_view
-from Reflexo.views.views_web import api_countries, api_regions, api_provinces, api_districts
+from django.urls import path
+from Reflexo.views.views_region import RegionView
+from Reflexo.views.views_provincia import ProvinceView
+from Reflexo.views.views_distrito import DistrictView
+from Reflexo.views.views_country import CountryView
+from Reflexo.views.views_web import HomeView, RegionsWebView, ProvincesWebView, DistrictsWebView, CountriesWebView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
-    path('countries/', countries_view, name='countries_view'),
-    path('regions/', regions_view, name='regions_view'),
-    path('provinces/', provinces_view, name='provinces_view'),
-    path('districts/', districts_view, name='districts_view'),
     
     # API endpoints
-    path('api/countries/', api_countries, name='api_countries'),
-    path('api/regions/', api_regions, name='api_regions'),
-    path('api/provinces/', api_provinces, name='api_provinces'),
-    path('api/districts/', api_districts, name='api_districts'),
+    path('api/regions/', RegionView.as_view(), name='list_regions'),
+    path('api/provinces/', ProvinceView.as_view(), name='list_provinces'),
+    path('api/districts/', DistrictView.as_view(), name='list_districts'),
+    path('api/countries/', CountryView.as_view(), name='list_countries'),
+    
+    # Web views
+    path('', HomeView.as_view(), name='home'),
+    path('regions/', RegionsWebView.as_view(), name='regions_view'),
+    path('provinces/', ProvincesWebView.as_view(), name='provinces_view'),
+    path('districts/', DistrictsWebView.as_view(), name='districts_view'),
+    path('countries/', CountriesWebView.as_view(), name='countries_view'),
 ]

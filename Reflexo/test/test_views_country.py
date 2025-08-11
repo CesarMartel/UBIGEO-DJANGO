@@ -9,7 +9,7 @@ def test_list_countries(client):
     Country.objects.create(name="Mexico", phone_code="+52", ISO2="MX")
 
     # Ejecutar petición
-    url = reverse("api_countries")
+    url = reverse("list_countries")
     response = client.get(url)
 
     # Validar respuesta
@@ -20,3 +20,4 @@ def test_list_countries(client):
     names = [country["name"] for country in data]
     assert "Peru" in names
     assert "Mexico" in names
+    assert "Argentina" not in names
