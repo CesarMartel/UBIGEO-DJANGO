@@ -4,7 +4,7 @@
 - country.py
 - province.py  
 - district.py
-- region.php  
+- region.py
 
 **Etiquetas:**  
 Backend, Modelo, Eloquent, Ubigeo, Relaciones, Integridad
