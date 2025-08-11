@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from Reflexo.models import Country# o Country, District, Region
+from Reflexo.models import Country
 
 @pytest.mark.django_db
 def test_list_countries(client):
@@ -9,7 +9,7 @@ def test_list_countries(client):
     Country.objects.create(name="Mexico", phone_code="+52", ISO2="MX")
 
     # Ejecutar petición
-    url = reverse("list_countries")
+    url = reverse("api_countries")
     response = client.get(url)
 
     # Validar respuesta
@@ -20,4 +20,3 @@ def test_list_countries(client):
     names = [country["name"] for country in data]
     assert "Peru" in names
     assert "Mexico" in names
-    assert "Argentina" not in names

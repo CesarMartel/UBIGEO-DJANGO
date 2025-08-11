@@ -5,7 +5,7 @@ from Reflexo.models import Region
 @pytest.mark.django_db
 def test_list_regions(client):
     Region.objects.create(name="Sierra")
-    url = reverse("list_regions")
+    url = reverse("api_regions")
     response = client.get(url)
     assert response.status_code == 200
 

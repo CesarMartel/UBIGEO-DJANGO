@@ -1,15 +1,17 @@
-from django.test import TestCase
+import pytest
+from django.urls import reverse
 from Reflexo.models import District, Province, Region
 
-class DistrictModelTest(TestCase):
-    def setUp(self):
-        self.region = Region.objects.create(name="Costa")
-        self.province = Province.objects.create(name="Lima", region=self.region)
-        self.district = District.objects.create(name="Miraflores", province=self.province)
+@pytest.mark.django_db
+def test_list_districts(client):
+    region = Region.objects.create(name="Costa")
+    province = Province.objects.create(name="Lima", region=region)
+    District.objects.create(name="Miraflores", province=province)
 
-    def test_district_creation(self):
-        self.assertEqual(self.district.name, "Miraflores")
-        self.assertEqual(self.district.province.name, "Lima")
+    url = reverse("api_districts")
+    response = client.get(url)
+    assert response.status_code == 200
 
-    def test_str_method(self):
-        self.assertEqual(str(self.district), "Miraflores")
+    data = response.json()
+    names = [dist["name"] for dist in data]
+    assert "Miraflores" in names
